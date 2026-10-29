@@ -486,6 +486,99 @@ box-shadow:0 0 0 1px rgba(var(--ar),.22),0 0 22px rgba(var(--ar),.34),0 10px 26p
 .cl p.cl-d{margin:0;font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.88)}
 @media(max-width:860px){.cl-g{grid-template-columns:1fr;max-width:460px}}
 @media(prefers-reduced-motion:reduce){.cl{transition:none}.cl:hover{transform:none}}
+
+/* events */
+#events{padding:64px 0}
+.ev-g{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1040px;margin:40px auto 0}
+.ev{position:relative;isolation:isolate;border-radius:24px;padding:28px 28px 30px;background:linear-gradient(145deg,rgba(var(--ar),.14),rgba(255,255,255,.04) 55%,rgba(255,255,255,.02));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(var(--rl),.26);box-shadow:0 14px 40px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.14);transition:transform .4s cubic-bezier(.2,.9,.25,1),box-shadow .4s}
+.ev:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(0,0,0,.4),0 0 34px rgba(var(--ar),.3),inset 0 1px 0 rgba(255,255,255,.2)}
+.ev-k{font:500 .78rem/1 var(--b);letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin:0 0 10px}
+.ev h3{font:800 1.6rem/1.15 var(--d);letter-spacing:-.02em;margin:0 0 6px}
+.ev-w{color:var(--mute);font-size:.95rem;margin:0 0 22px}
+.ev-st{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 22px}
+.ev-s{border-radius:16px;padding:16px 16px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(var(--rl),.2)}
+.ev-s b{display:block;font:800 2.3rem/1 var(--d);letter-spacing:-.03em;color:var(--a);margin-bottom:6px}
+.ev-s span{font-size:.88rem;line-height:1.35;color:rgba(255,255,255,.88)}
+.ev-ch{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.ev-ch li{padding:8px 15px;border-radius:999px;font-size:.92rem;font-weight:500;background:rgba(255,255,255,.07);border:1px solid rgba(var(--rl),.3);transition:background .3s,border-color .3s,transform .3s}
+.ev-ch li:hover{background:rgba(var(--ar),.22);border-color:rgba(var(--rl),.7);transform:translateY(-2px)}
+.ev-h{font:500 .74rem/1 var(--b);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
+@media(max-width:860px){.ev-g{grid-template-columns:1fr;max-width:520px}}
+@media(prefers-reduced-motion:reduce){.ev,.ev-ch li{transition:none}.ev:hover,.ev-ch li:hover{transform:none}}
+.ev-d{margin:0 0 22px;font-size:.95rem;line-height:1.6;color:rgba(255,255,255,.88)}
+
+/* events rows */
+.ev-g{display:none}
+.ev-rows{display:grid;gap:72px;max-width:1040px;margin:48px auto 0}
+.ev-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.ev-t .ev-w{margin-bottom:20px}
+.ev-pics{display:grid;gap:14px}
+.ev-ph{position:relative;aspect-ratio:16/7;border-radius:6px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,rgba(var(--ar),.22),rgba(255,255,255,.05) 60%),rgba(255,255,255,.04);border:1px solid rgba(var(--rl),.3);box-shadow:0 12px 30px rgba(0,0,0,.35);background-size:cover;background-position:center;transition:transform .5s cubic-bezier(.2,.9,.25,1),box-shadow .5s}
+.ev-ph span{font:500 .78rem/1 var(--b);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.ev-ph::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(var(--rl),.18),transparent 55%)}
+.ev-pics.r .ev-ph:nth-child(1){margin-left:0;margin-right:9%}.ev-pics.r .ev-ph:nth-child(2){margin-left:9%;margin-right:0}.ev-pics.r .ev-ph:nth-child(3){margin-left:0;margin-right:9%}
+.ev-pics.l .ev-ph:nth-child(1){margin-left:9%;margin-right:0}.ev-pics.l .ev-ph:nth-child(2){margin-left:0;margin-right:9%}.ev-pics.l .ev-ph:nth-child(3){margin-left:9%;margin-right:0}
+.ev-ph:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 28px rgba(var(--ar),.35)}
+@media(max-width:860px){.ev-row{grid-template-columns:1fr;gap:28px;max-width:520px;margin:0 auto}.ev-row .ev-pics{order:2}.ev-row .ev-t{order:1}.ev-rows{gap:56px}}
+@media(prefers-reduced-motion:reduce){.ev-ph{transition:none}.ev-ph:hover{transform:none}}
+.ev-t h3{font:800 2rem/1.1 var(--d);letter-spacing:-.02em;margin:0 0 6px}
+.ev-t .ev-k{margin:0 0 10px}
+
+.ev-ph.vid{aspect-ratio:16/9;background:#000}
+.ev-ph.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ev-pics.l.v{gap:10px}
+.ev-pics.l.v .ev-ph:nth-child(odd){margin:0 0 0 38%}
+.ev-pics.l.v .ev-ph:nth-child(even){margin:0 38% 0 0}
+.ev-ph.vid::before{display:none}
+@media(max-width:860px){.ev-pics.l.v .ev-ph:nth-child(n){margin:0}}
+
+.ev-row.rev{grid-template-columns:1.25fr 1fr}
+.ev-pics.l.v{grid-template-columns:1fr 1fr;gap:12px}
+.ev-pics.l.v .ev-ph:nth-child(n){margin:0}
+@media(max-width:860px){.ev-row.rev{grid-template-columns:1fr}.ev-pics.l.v{gap:10px}}
+
+.ev-steps-w{margin-top:24px}
+.ev-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 20px;margin-top:62px}
+.st-c{position:relative;border-radius:22px;padding:34px 22px 24px;background:linear-gradient(150deg,rgba(var(--ar),.12),rgba(255,255,255,.04) 55%,rgba(255,255,255,.02));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(var(--rl),.26);box-shadow:0 14px 36px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.14);transition:transform .4s cubic-bezier(.2,.9,.25,1),box-shadow .4s}
+.st-c:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.4),0 0 30px rgba(var(--ar),.3),inset 0 1px 0 rgba(255,255,255,.2)}
+.st-h{display:flex;align-items:center;justify-content:space-between;margin:-62px 0 14px}
+.st-i{display:grid;place-items:center;width:58px;height:58px;border-radius:16px;font:800 1.5rem/1 var(--d);color:var(--on);background:linear-gradient(145deg,var(--a2),var(--a) 70%,var(--a3));box-shadow:0 10px 24px rgba(var(--ar),.35)}
+.st-h b{font:800 2.2rem/1 var(--d);letter-spacing:-.03em;color:var(--a)}
+.st-c h4{font:800 1.12rem/1.25 var(--d);letter-spacing:-.015em;margin:0 0 12px}
+.st-c ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.st-c li{position:relative;padding-left:24px;font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.88)}
+.st-c li::before{content:"+";position:absolute;left:0;top:-1px;width:16px;height:16px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;line-height:1;color:var(--on);background:var(--a)}
+@media(max-width:980px){.ev-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.ev-steps{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+@media(prefers-reduced-motion:reduce){.st-c{transition:none}.st-c:hover{transform:none}}
+
+.st-h b.st-i{min-width:76px;width:auto;padding:0 18px;height:58px;font:800 1.7rem/1 var(--d);letter-spacing:-.02em;color:var(--on)}
+.st-h{justify-content:flex-start}
+
+/* ADNOC columns */
+.ad-cols{max-width:1040px;margin:0 auto}
+.ad-g{display:grid;grid-template-columns:1.55fr 1fr 1fr 1fr;border-radius:26px;overflow:hidden;min-height:560px;box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 40px rgba(var(--ar),.18)}
+.ad-t{position:relative;z-index:4;padding:36px 30px 30px;background:linear-gradient(160deg,#34303d,#25222d 70%);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.ad-t .ev-w{margin-bottom:18px}
+.ad-t h3{font:800 2rem/1.1 var(--d);letter-spacing:-.02em;margin:0 0 6px}
+.ad-t .ev-s{background:rgba(255,255,255,.06)}
+.ad-c{position:relative;display:flex;align-items:center;justify-content:center;padding:28px 18px}
+.ad-c::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.16) 9%,transparent 24%),linear-gradient(180deg,rgba(0,0,0,.12),transparent 20%,transparent 80%,rgba(0,0,0,.18))}
+.ad-c.c1{z-index:3;background:linear-gradient(180deg,#F3DDAA,#E9A56E 55%,#E27F6A)}
+.ad-c.c2{z-index:2;background:linear-gradient(180deg,#FF7AD8,#F022B4 60%,#C0108D)}
+.ad-c.c3{z-index:1;background:linear-gradient(180deg,#C0108D,#8C0F7A 60%,#5A0C5E)}
+.ad-v{position:relative;width:100%;max-width:150px;aspect-ratio:9/16;border-radius:14px;display:grid;place-items:center;background:rgba(10,6,24,.34);border:1.5px solid rgba(255,255,255,.5);box-shadow:0 14px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25);overflow:hidden;z-index:1}
+.ad-v span{font:500 .72rem/1 var(--b);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.ad-v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:980px){.ad-g{grid-template-columns:1fr 1fr 1fr;min-height:0}.ad-t{grid-column:1/-1;padding:30px 24px}.ad-c{padding:22px 12px}.ad-c::before{background:linear-gradient(90deg,rgba(0,0,0,.35),transparent 20%)}}
+@media(max-width:560px){.ad-v{max-width:96px}.ad-c{padding:18px 8px}}
+
+.ad-c.c1,.ad-c.c2,.ad-c.c3{background:#0b0914;padding:0}
+.ad-c::before{z-index:2}
+.ad-v{max-width:none;width:100%;height:100%;aspect-ratio:auto;border:0;border-radius:0;box-shadow:none;background:linear-gradient(180deg,#1b1826,#100d1a);position:absolute;inset:0}
+.ad-v span{color:rgba(255,255,255,.45)}
+@media(max-width:980px){.ad-c{min-height:240px}.ad-v{max-width:none}}
+@media(max-width:560px){.ad-v{max-width:none}.ad-c{padding:0;min-height:200px}}
 </style>
 </head>
 <body>
@@ -533,6 +626,25 @@ box-shadow:0 0 0 1px rgba(var(--ar),.22),0 0 22px rgba(var(--ar),.34),0 10px 26p
 <article class="jt-i"><button type="button" class="jt-c" aria-expanded="false" aria-controls="jx3"><span class="jt-d">May 2018 to May 2019</span><h3>Graphic Designer &amp; Video Editor</h3><span class="jt-co">Orange Medias, Chennai, India</span><p class="jt-s">Produced impactful corporate videos, motion graphics and digital marketing visuals to strengthen brand communication and promotional campaigns. Ensured consistent branding across print, digital and event platforms while supporting event production, logistics and on-site execution.</p><span class="jt-x" id="jx3"><span class="jt-xi"><ul><li>Delivered corporate videos, motion graphics and digital marketing visuals for promotional campaigns.</li><li>Kept print and digital event branding visually consistent, and supported logistics and on-site execution.</li></ul></span></span><span class="jt-h"><i></i><b>Read more</b></span></button></article>
 </div>
 </div></section>
+
+<section id="events"><div class="wrap">
+<div class="jt-hd"><p class="ey">Events &amp; Brand Activations</p>
+<h2 class="xh">Experiences I've Delivered</h2>
+<p class="xs">From festivals and exhibitions to product launches and government events, the activations I've planned and run.</p></div>
+<div class="ev-rows">
+<article class="ad-cols"><div class="ad-g"><div class="ad-t"><p class="ev-k">Events &amp; Campaign Activations</p><h3>ADNOC</h3><p class="ev-w">Via Entourage Marketing &amp; Events, UAE</p>
+<div class="ev-st"><div class="ev-s" style="grid-column:1/-1"><b data-n="15">15+</b><span>Events &amp; activations delivered</span></div></div>
+<p class="ev-d">Planned and coordinated corporate events, internal engagement programs, exhibitions, and marketing campaigns for ADNOC, including the Liwa Date Festival, ATM Exhibition, summer programs, and community engagement activities across the UAE.</p>
+<p class="ev-h">Activities</p>
+<ul class="ev-ch"><li>Liwa Date Festival</li><li>ATM Exhibition &ndash; UAE</li><li>Summer Programs &amp; Activities</li><li>Marketing Campaign Activations</li><li>Internal &amp; Corporate Events</li><li>Community Engagement Events</li></ul></div>
+<div class="ad-c c1"><div class="ad-v"><video data-src="ad-emirates.mp4" muted loop playsinline preload="none" aria-label="Make it in the Emirates recap"></video></div></div><div class="ad-c c2"><div class="ad-v"><video data-src="ad-date-festival.mp4" muted loop playsinline preload="none" aria-label="Date festival"></video></div></div><div class="ad-c c3"><div class="ad-v"><video data-src="ad-eid.mp4" muted loop playsinline preload="none" aria-label="Eid event"></video></div></div></div></article>
+<article class="ev-row rev"><div class="ev-pics l v" aria-label="Zoomlion event videos"><div class="ev-ph vid"><video data-src="z-jubail.mp4" muted loop playsinline preload="none" aria-label="Jubail branch opening ceremony"></video></div><div class="ev-ph vid"><video data-src="z-dammam.mp4" muted loop playsinline preload="none" aria-label="KSA Dammam event"></video></div><div class="ev-ph vid"><video data-src="z-big5.mp4" muted loop playsinline preload="none" aria-label="The Big 5 Construct"></video></div><div class="ev-ph vid"><video data-src="z-crane.mp4" muted loop playsinline preload="none" aria-label="Mobile crane"></video></div><div class="ev-ph vid"><video data-src="z-atlantis.mp4" muted loop playsinline preload="none" aria-label="Atlantis event"></video></div><div class="ev-ph vid"><video data-src="z-wishes.mp4" muted loop playsinline preload="none" aria-label="Zoomlion wishes"></video></div></div><div class="ev-t"><p class="ev-k">Events &amp; Product Launches</p><h3>Zoomlion</h3><p class="ev-w">UAE &middot; Nov 2021 to Jun 2025</p>
+<p class="ev-h">Trade Shows &amp; Exhibitions In</p>
+<ul class="ev-ch" style="margin-bottom:18px"><li>UAE</li><li>Oman</li><li>Saudi Arabia</li><li>Africa</li></ul>
+<p class="ev-h">Also</p>
+<ul class="ev-ch"><li>Internal Events</li></ul></div></article>
+<div class="ev-steps-w"><p class="ev-k" style="text-align:center">Zoomlion &middot; What I Handled</p><div class="ev-steps"><article class="st-c"><div class="st-h"><b class="st-i" data-n="20">20+</b></div><h4>Customer Engagement Events</h4><ul><li>Event planning and coordination</li><li>Client engagement and networking</li><li>Venue, logistics and vendor management</li></ul></article><article class="st-c"><div class="st-h"><b class="st-i" data-n="15">15+</b></div><h4>Product Launch Events</h4><ul><li>Launch concept and event planning</li><li>Product displays and brand activations</li><li>Production and on-site execution</li></ul></article><article class="st-c"><div class="st-h"><b class="st-i" data-n="5">5+</b></div><h4>Branch Inauguration Events</h4><ul><li>Opening ceremony planning</li><li>Branding, d&eacute;cor and venue setup</li><li>Guest management and event coordination</li></ul></article><article class="st-c"><div class="st-h"><b class="st-i" data-n="5">5+</b></div><h4>Government &amp; Corporate Events</h4><ul><li>VIP and stakeholder coordination</li><li>Event protocol and logistics</li><li>Branding and production management</li></ul></article><article class="st-c"><div class="st-h"><b class="st-i" data-n="5">5+</b></div><h4>Trade Shows &amp; Exhibitions</h4><ul><li>Exhibition booth design and fabrication coordination</li><li>Contractor and supplier management</li><li>Installation, branding and on-site supervision</li></ul></article><article class="st-c"><div class="st-h"><b class="st-i" data-n="5">5+</b></div><h4>Dealer &amp; Distributor Conferences</h4><ul><li>Conference planning and scheduling</li><li>Dealer engagement and hospitality</li><li>Presentations, branding and event logistics</li></ul></article></div></div>
+</div></div></section>
 
 <section id="clients"><div class="wrap">
 <div class="jt-hd"><p class="ey">Major Clients</p>
@@ -834,5 +946,17 @@ i.style.background=cols[n%cols.length];i.style.setProperty("--dx",(Math.cos(t)*d
 var on=false;
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.intersectionRatio>=.6&&!on){on=true;a.classList.remove("go");void a.offsetWidth;a.classList.add("go");burst()}else if(e.intersectionRatio<.05&&on){on=false;a.classList.remove("go");a.querySelectorAll("i").forEach(function(x){x.remove()})}})},{threshold:[0,.05,.6,1]});io.observe(a);
 })();</script>
+<script>
+(function(){var els=document.querySelectorAll('.ev-s b[data-n],.st-c b[data-n]');if(!els.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var io=new IntersectionObserver(function(en){en.forEach(function(e){if(!e.isIntersecting)return;var b=e.target,n=+b.dataset.n,t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1100);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+'+';if(k<1)requestAnimationFrame(f)})(t0);io.unobserve(b)})},{threshold:.6});
+els.forEach(function(b){io.observe(b)})})();
+</script>
+<script>
+(function(){var vs=document.querySelectorAll('.ev-ph video[data-src],.ad-v video[data-src]');if(!vs.length)return;
+function ld(v){if(!v.src){v.src=v.dataset.src}}
+if(!('IntersectionObserver' in window)){vs.forEach(function(v){ld(v);v.play&&v.play()});return}
+var io=new IntersectionObserver(function(en){en.forEach(function(e){var v=e.target;if(e.isIntersecting){ld(v);var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.35});
+vs.forEach(function(v){io.observe(v)})})();
+</script>
 </body>
 </html>
