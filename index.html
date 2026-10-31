@@ -579,6 +579,38 @@ box-shadow:0 0 0 1px rgba(var(--ar),.22),0 0 22px rgba(var(--ar),.34),0 10px 26p
 .ad-v span{color:rgba(255,255,255,.45)}
 @media(max-width:980px){.ad-c{min-height:240px}.ad-v{max-width:none}}
 @media(max-width:560px){.ad-v{max-width:none}.ad-c{padding:0;min-height:200px}}
+
+/* rolling boxes */
+#roll{padding:64px 0 72px;overflow:hidden}
+.pf{--t:min(150px,max(12.5vw,84px));--pw:min(250px,54vw);position:relative;height:calc(var(--pw)*2.07 + 40px);margin:30px auto 0;display:flex;justify-content:center;align-items:center;perspective:1400px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.pf-g{position:absolute;top:50%;display:grid;grid-template-columns:repeat(3,var(--t));grid-auto-rows:var(--t);gap:calc(var(--t)*.09);margin-top:calc(var(--t)*-1.59)}
+.pf-g.l{right:calc(50% + var(--pw)*.5 + var(--t)*.02);transform-origin:right center;transform:rotateY(26deg)}
+.pf-g.r{left:calc(50% + var(--pw)*.5 + var(--t)*.02);transform-origin:left center;transform:rotateY(-26deg)}
+.pf-g i{display:block;border-radius:14px;background:linear-gradient(155deg,rgba(var(--ar),.18),rgba(255,255,255,.05) 60%),#120a24;border:1px solid rgba(var(--rl),.26);box-shadow:0 14px 34px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12)}
+.pf-g.l i:nth-child(3n+1),.pf-g.r i:nth-child(3n){opacity:.5}
+.pf-g i.pdf{overflow:hidden;position:relative;background:#fff}
+.pf-g i.pdf span{display:block;animation:pfs var(--du,70s) linear infinite;will-change:transform}
+.pf-g i.pdf img{display:block;width:100%;height:auto}
+@keyframes pfs{to{transform:translateY(-50%)}}
+@media(prefers-reduced-motion:reduce){.pf-g i.pdf span{animation:none}}
+.pf-g i.pdf{cursor:pointer}
+.pf-g i.pdf.nc{cursor:default}
+.pf-g i.pdf.dn span{animation-direction:reverse}
+.pf-g i.pdf:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.lb{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(6,3,16,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lb.on{display:flex}
+.lb-p{position:relative;width:min(980px,94vw);height:92vh;display:flex;flex-direction:column;border-radius:18px;background:#0d0719;border:1px solid rgba(var(--rl),.35);box-shadow:0 30px 100px rgba(0,0,0,.7),0 0 60px rgba(var(--ar),.25);overflow:hidden}
+.lb-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(var(--rl),.22)}
+.lb-t{font-family:var(--d);font-size:15px;letter-spacing:.02em;color:var(--on)}
+.lb-x{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;cursor:pointer;color:#fff;font-size:22px;line-height:1;background:rgba(255,255,255,.07);border:1px solid rgba(var(--rl),.4);flex:none}
+.lb-x:hover{background:rgba(var(--ar),.35)}
+.lb-b{flex:1;overflow-y:auto;padding:16px 18px 24px;-webkit-overflow-scrolling:touch}
+.lb-b img{display:block;width:100%;height:auto;margin:0 0 14px;border-radius:10px;background:#1a1030}
+body.lbo{overflow:hidden}
+.pf-d{position:relative;z-index:5;width:var(--pw);aspect-ratio:9/18.6;border-radius:calc(var(--pw)*.15);padding:calc(var(--pw)*.034);background:linear-gradient(160deg,#2a2036,#0b0714);border:1px solid rgba(var(--rl),.45);box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 70px rgba(var(--ar),.3),inset 0 0 0 2px rgba(255,255,255,.05)}
+.pf-sc{position:relative;width:100%;height:100%;border-radius:calc(var(--pw)*.12);overflow:hidden;background:linear-gradient(180deg,#140a26,#0a0614)}
+.pf-sc video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pf-sc:before{content:"";position:absolute;z-index:2;top:calc(var(--pw)*.03);left:50%;width:30%;height:calc(var(--pw)*.07);margin-left:-15%;border-radius:20px;background:#000}
 </style>
 </head>
 <body>
@@ -705,6 +737,12 @@ box-shadow:0 0 0 1px rgba(var(--ar),.22),0 0 22px rgba(var(--ar),.34),0 10px 26p
 </div></div></div></div>
 </div></section>
 <div id="mzm" class="mzm" role="dialog" aria-modal="true" aria-label="Work preview" hidden><button type="button" class="mzx" aria-label="Close">&times;</button><button type="button" class="mzn mzp" aria-label="Previous">&#8249;</button><div class="mzb"><div class="mzs" id="mzs"></div><div class="mzc"><span id="mzt"></span><span id="mzk"></span></div></div><button type="button" class="mzn mzq" aria-label="Next">&#8250;</button></div>
+<section id="roll"><div class="wrap">
+<div class="jt-hd"><p class="ey">Highlights</p>
+<h2 class="xh">Moments I'm Proud Of</h2>
+<p class="xs">A closer look at the work behind the numbers.</p></div>
+<div class="pf" id="rl" aria-label="Al Dhannah Instagram showcase"><div class="pf-g l"><i class="pdf nc dn" style="--du:32s" aria-hidden="true"><span><img src="pdf-strip17.jpg" alt="" loading="lazy"><img src="pdf-strip17.jpg" alt="" loading="lazy"></span></i><i class="pdf" data-g="g1" data-c="21" data-t="Sheikha Hind – Brand Identity & Logo" role="button" tabindex="0" aria-label="Open: Sheikha Hind – Brand Identity & Logo" style="--du:45s"><span><img src="pdf-strip1.jpg" alt="" loading="lazy"><img src="pdf-strip1.jpg" alt="" loading="lazy"></span></i><i class="pdf nc" style="--du:28s" aria-hidden="true"><span><img src="pdf-strip8.jpg" alt="" loading="lazy"><img src="pdf-strip8.jpg" alt="" loading="lazy"></span></i><i class="pdf nc" style="--du:25s" aria-hidden="true"><span><img src="pdf-strip16.jpg" alt="" loading="lazy"><img src="pdf-strip16.jpg" alt="" loading="lazy"></span></i><i class="pdf" data-g="g8" data-c="20" data-t="Website Design – Selected Layouts" role="button" tabindex="0" aria-label="Open: Website Design – Selected Layouts" style="--du:158s"><span><img src="pdf-strip10.jpg" alt="" loading="lazy"><img src="pdf-strip10.jpg" alt="" loading="lazy"></span></i><i class="pdf" data-g="g6" data-c="53" data-t="ADNOC – Al Dhannah City Event Branding" role="button" tabindex="0" aria-label="Open: ADNOC – Al Dhannah City Event Branding" style="--du:95s"><span><img src="pdf-strip6.jpg" alt="" loading="lazy"><img src="pdf-strip6.jpg" alt="" loading="lazy"></span></i><i class="pdf nc dn" style="--du:40s" aria-hidden="true"><span><img src="pdf-strip14.jpg" alt="" loading="lazy"><img src="pdf-strip14.jpg" alt="" loading="lazy"></span></i><i class="pdf dn" data-g="g4" data-c="13" data-t="Bowery – Creative Concepts & Instagram Feed" role="button" tabindex="0" aria-label="Open: Bowery – Creative Concepts & Instagram Feed" style="--du:36s"><span><img src="pdf-strip4.jpg" alt="" loading="lazy"><img src="pdf-strip4.jpg" alt="" loading="lazy"></span></i><i class="pdf nc dn" style="--du:25s" aria-hidden="true"><span><img src="pdf-strip12.jpg" alt="" loading="lazy"><img src="pdf-strip12.jpg" alt="" loading="lazy"></span></i></div><div class="pf-d"><div class="pf-sc" id="phSc"><video data-src="phone-scroll2.mp4" muted loop playsinline preload="none" aria-label="Al Dhannah Instagram page scrolling"></video></div></div><div class="pf-g r"><i class="pdf dn" data-g="g7" data-c="117" data-t="Al Dhannah Brand Book 2026" role="button" tabindex="0" aria-label="Open: Al Dhannah Brand Book 2026" style="--du:190s"><span><img src="pdf-strip7.jpg" alt="" loading="lazy"><img src="pdf-strip7.jpg" alt="" loading="lazy"></span></i><i class="pdf dn" data-g="g3" data-c="16" data-t="Bowery – Brand Guideline" role="button" tabindex="0" aria-label="Open: Bowery – Brand Guideline" style="--du:30s"><span><img src="pdf-strip3.jpg" alt="" loading="lazy"><img src="pdf-strip3.jpg" alt="" loading="lazy"></span></i><i class="pdf" data-g="g10" data-c="1" data-t="Heart of RAK – Concept &amp; Design Proposal" role="button" tabindex="0" aria-label="Open: Heart of RAK – Concept and Design Proposal" style="--du:25s"><span><img src="pdf-strip13.jpg" alt="" loading="lazy"><img src="pdf-strip13.jpg" alt="" loading="lazy"></span></i><i class="pdf" data-g="g5" data-c="9" data-t="Bowery – Instagram Posts" role="button" tabindex="0" aria-label="Open: Bowery – Instagram Posts" style="--du:48s"><span><img src="pdf-strip5.jpg" alt="" loading="lazy"><img src="pdf-strip5.jpg" alt="" loading="lazy"></span></i><i class="pdf nc dn" style="--du:30s" aria-hidden="true"><span><img src="pdf-strip9.jpg" alt="" loading="lazy"><img src="pdf-strip9.jpg" alt="" loading="lazy"></span></i><i class="pdf dn" data-g="g9" data-c="17" data-t="TikTok – Go-To-Market Details" role="button" tabindex="0" aria-label="Open: TikTok – Go-To-Market Details" style="--du:42s"><span><img src="pdf-strip15.jpg" alt="" loading="lazy"><img src="pdf-strip15.jpg" alt="" loading="lazy"></span></i><i class="pdf nc" style="--du:310s" aria-hidden="true"><span><img src="pdf-strip11.jpg" alt="" loading="lazy"><img src="pdf-strip11.jpg" alt="" loading="lazy"></span></i><i class="pdf" data-g="g2" data-c="19" data-t="Sheikha Hind – Campaign Materials & Logo" role="button" tabindex="0" aria-label="Open: Sheikha Hind – Campaign Materials & Logo" style="--du:40s"><span><img src="pdf-strip2.jpg" alt="" loading="lazy"><img src="pdf-strip2.jpg" alt="" loading="lazy"></span></i><i class="pdf nc dn" style="--du:25s" aria-hidden="true"><span><img src="pdf-strip18.jpg" alt="" loading="lazy"><img src="pdf-strip18.jpg" alt="" loading="lazy"></span></i></div></div></div></section>
+
 <section id="skills"><div class="wrap">
 <h2>Skills</h2>
 <div class="sk">
@@ -953,11 +991,24 @@ var io=new IntersectionObserver(function(en){en.forEach(function(e){if(!e.isInte
 els.forEach(function(b){io.observe(b)})})();
 </script>
 <script>
-(function(){var vs=document.querySelectorAll('.ev-ph video[data-src],.ad-v video[data-src]');if(!vs.length)return;
+(function(){var vs=document.querySelectorAll('.ev-ph video[data-src],.ad-v video[data-src],.pf-sc video[data-src]');if(!vs.length)return;
 function ld(v){if(!v.src){v.src=v.dataset.src}}
 if(!('IntersectionObserver' in window)){vs.forEach(function(v){ld(v);v.play&&v.play()});return}
 var io=new IntersectionObserver(function(en){en.forEach(function(e){var v=e.target;if(e.isIntersecting){ld(v);var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.35});
 vs.forEach(function(v){io.observe(v)})})();
+</script>
+<script>
+
+</script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project viewer"><div class="lb-p"><div class="lb-h"><span class="lb-t" id="lbT"></span><button type="button" class="lb-x" id="lbX" aria-label="Close">&times;</button></div><div class="lb-b" id="lbB"></div></div></div>
+<script>
+(function(){var lb=document.getElementById('lb');if(!lb)return;var B=document.getElementById('lbB'),T=document.getElementById('lbT'),last=null;
+function open(el){last=el;var g=el.dataset.g,c=+el.dataset.c,h='';T.textContent=el.dataset.t;for(var i=1;i<=c;i++){var w=c>99?3:2,n=String(i);while(n.length<w)n='0'+n;h+='<img loading="lazy" decoding="async" alt="'+el.dataset.t+' – page '+i+'" src="pages/'+g+'-'+n+'.jpg">'}B.innerHTML=h;B.scrollTop=0;lb.classList.add('on');document.body.classList.add('lbo');document.getElementById('lbX').focus()}
+function close(){lb.classList.remove('on');document.body.classList.remove('lbo');B.innerHTML='';if(last)last.focus()}
+document.querySelectorAll('.pf-g i.pdf[data-g]').forEach(function(el){el.addEventListener('click',function(){open(el)});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(el)}})});
+document.getElementById('lbX').addEventListener('click',close);
+lb.addEventListener('click',function(e){if(e.target===lb)close()});
+addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))close()})})();
 </script>
 </body>
 </html>
